@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Dukkanlar";
+}
+@using PhoneProg.Data.Models;
+@model List<Dukkanlar>
+
+<h2>Dukkanlar</h2>
+
+<table id="example" class="display nowrap" style="width:100%">
+    <thead>
+        <tr>
+            <th>Ad</th>
+            <th>Telefon Adedi</th>
+            @*<th>Güncelle</th>
+            <th>Sil</th>*@
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Ad</td>
+                <td>@item.Telefonlar.Count()</td>
+                @*<td><button class="guncelle btn btn-custom" value="@item.Id">Güncelle</button></td>
+                <td><button class="sil btn btn-danger" value="@item.Id">Sil</button></td>*@
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>Ad</th>
+            <th>Telefon Adedi</th>
+            @*<th>Güncelle</th>
+            <th>Sil</th>*@
+        </tr>
+    </tfoot>
+</table>

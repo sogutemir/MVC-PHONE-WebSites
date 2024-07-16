@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "Telefon Ekle";
+}
+
+<h2>Telefon Ekle</h2>
+
+<form class="form-horizontal">
+    <div class="form-group">
+        <label class="col-sm-12">Marka Seç</label>
+        <div class="col-sm-9">
+            <select id="kategoriler" class="form-control">
+                @foreach (var kategori in ViewBag.Kategoriler)
+                {
+                    <option data-id="@kategori.Id">@kategori.Ad</option>
+                }
+            </select>
+        </div>
+        <div class="col-sm-3">
+            <input type="button" id="kategoriEkle" class="btn btn-block btn-info" value="Ekle">
+        </div>
+        <div id="eklenenKategoriler" class="form-group">
+            <label class="col-md-12">Kategoriler</label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-12">Dükkan Seç</label>
+        <div class="col-sm-9">
+            <select id="dukkanlar" class="form-control">
+                @foreach (var dukkan in ViewBag.Dukkanlar)
+                {
+                    <option data-id="@dukkan.Id">@dukkan.Ad</option>
+                }
+            </select>
+        </div>
+        <div class="col-sm-3">
+            <input type="button" id="dukkanEkle" class="btn btn-block btn-info" value="Ekle">
+        </div>
+        <div id="eklenenDukkanlar" class="form-group">
+            <label class="col-md-12">Dukkanlar</label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-12">Ürün Adı</label>
+        <div class="col-md-12">
+            <input id="telefonAdi" type="text" class="form-control" placeholder="Ürün Adı Giriniz">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-12">Ürün Alış Fiyatı</label>
+        <div class="col-md-12">
+            <input id="telefonAlıs" type="text" class="form-control" placeholder="Ürün Alış Giriniz">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-12">Ürün Durumu</label>
+        <div class="col-md-12">
+            <input id="telefonDurum" type="text" class="form-control" placeholder="Sıfır mı 2.El mi">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-12">Alıcı Tel No</label>
+        <div class="col-md-12">
+            <input id="telefonNo" type="text" class="form-control" placeholder="Alıcı TelNo Giriniz">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-12">Varsa Imeil</label>
+        <div class="col-md-12">
+            <input id="Imeil" type="text" class="form-control" placeholder="Telefon IMEI Giriniz">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-12">
+            <input type="button" id="telefonKaydet" class="btn btn-block btn-info" value="Kaydet">
+        </div>
+    </div>
+
+</form>

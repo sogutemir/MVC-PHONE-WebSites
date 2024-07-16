@@ -1,0 +1,125 @@
+﻿
+@{
+    ViewBag.Title = "Telefon Güncellle";
+    int count = 0;
+}
+@using PhoneProg.Data.Models
+@model Telefonlar
+
+<h2>Telefon Güncellle</h2>
+
+<form class="form-horizontal">
+    <div class="form-group">
+        <label class="col-sm-12">Marka Seç</label>
+        <div class="col-sm-9">
+            <select id="kategoriler" class="form-control">
+                @foreach (var kategori in ViewBag.Kategoriler)
+                {
+                    count = 0;
+                    foreach (var eklenmisKategori in Model.Kategoriler)
+                    {
+                        if (kategori.Id != eklenmisKategori.Id)
+                        {
+                            if (count < Model.Kategoriler.Count - 1)
+                            {
+                                count++;
+                            }
+                            else
+                            {
+                                <option data-id="@kategori.Id">@kategori.Ad</option>
+                                break;
+                            }
+                        }
+                        else
+                        {
+                            break;
+                        }
+
+                    }
+                }
+            </select>
+        </div>
+        <div class="col-sm-3">
+            <input type="button" id="kategoriEkle" class="btn btn-block btn-info" value="Ekle">
+        </div>
+        <div id="eklenenKategoriler" class="form-group">
+            <label class="col-md-12">Kategoriler</label>
+            @foreach (var kategori in Model.Kategoriler)
+            {
+                <div id="@kategori.Id" class="col-md-1 bg-primary dukkanSil" style="margin-right:2px; margin-bottom:2px;">@kategori.Ad </div>
+            }
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-12">Dükkan Seç</label>
+        <div class="col-sm-9">
+            <select id="dukkanlar" class="form-control">
+                @foreach (var Dukkan in ViewBag.Dukkanlar)
+                {
+                    count = 0;
+                    foreach (var eklenmisDukkan in Model.Dukkanlar)
+                    {
+                        if (Dukkan.Id != eklenmisDukkan.Id)
+                        {
+                            if (count < Model.Dukkanlar.Count - 1)
+                            {
+                                count++;
+                            }
+                            else
+                            {
+                                <option data-id="@Dukkan.Id">@Dukkan.Ad</option>
+                                break;
+                            }
+                        }
+                        else
+                        {
+                            break;
+                        }
+
+                    }
+                }
+            </select>
+        </div>
+        <div class="col-sm-3">
+            <input type="button" id="dukkanEkle" class="btn btn-block btn-info" value="Ekle">
+        </div>
+        <div id="eklenenDukkanlar" class="form-group">
+
+            <label class="col-md-12">Dukkanlar</label>
+            @foreach (var dknlar in Model.Dukkanlar)
+            {
+                <div id="@dknlar.Id" class="col-md-1 bg-primary dukkanSil" style="margin-right:2px; margin-bottom:2px;">@dknlar.Ad </div>
+            }
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-12">Ürün Adı</label>
+        <div class="col-md-12">
+            <input id="telefonAdi" value="@Model.AdSoyad" type="text" class="form-control" placeholder="Ürün Adı Giriniz">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-12">Ürün Alış Fiyatı</label>
+        <div class="col-md-12">
+            <input id="telefonAlıs" value="@Model.TelefonAlısFiyati" type="text" class="form-control" placeholder="Ürün Alış Giriniz">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-12">Alıcı Tel No</label>
+        <div class="col-md-12">
+            <input id="telefonNo" value="@Model.TelefonNo" type="text" class="form-control" placeholder="Alıcı TelNo Giriniz">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-12">Imeil</label>
+        <div class="col-md-12">
+            <input id="Imeil" value="@Model.Imeil" type="text" class="form-control" placeholder="Telefon IMEI Giriniz">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-12">
+            <input type="button" id="telefonGuncelle" data-id="@Model.Id" class="btn btn-block btn-info" value="Guncelle">
+        </div>
+    </div>
+
+</form>

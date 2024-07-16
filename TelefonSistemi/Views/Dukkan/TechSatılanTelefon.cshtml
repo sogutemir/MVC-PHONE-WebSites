@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "TechSatılanTelefon";
+}
+
+@using PhoneProg.Data.Models;
+@model List<Telefonlar>
+
+<h2>Satılan Telefonlar</h2>
+
+<table id="example" class="display nowrap" style="width:100%">
+    <thead>
+        <tr>
+            <th>Ürün Id</th>
+            <th>Ürün Adı</th>
+            <th>Ürün Durumu</th>
+            <th>Alış Fiyatı</th>
+            <th>Satış Fiyatı</th>
+            <th>Tarih</th>
+            <th>Kategori-Marka</th>
+            <th>Dükkan</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var telefon in Model)
+        {
+            bool isTechStore = false;
+            foreach (var Dukkan in telefon.Dukkanlar)
+            {
+                if (Dukkan.Ad == "Tech")
+                {
+                    isTechStore = true;
+                    break;
+                }
+            }
+
+            if (telefon.Satildi==true && isTechStore)
+            {
+                <tr>
+                    <td>@telefon.Id</td>
+                    <td>@telefon.AdSoyad</td>
+                    <td>@telefon.Durum</td>
+                    <td>@telefon.TelefonAlısFiyati</td>
+                    <td>@telefon.SatısFiyatı</td>
+                    <td>@telefon.SatisTarihi</td>
+                    <td>
+                        @foreach (var kategori in telefon.Kategoriler)
+                        {
+                            @kategori.Ad
+                        }
+                    </td>
+                    <td>
+                        @foreach (var Dukkan in telefon.Dukkanlar)
+                        {
+                            @Dukkan.Ad
+                        }
+                    </td>
+                </tr>
+            }
+        }
+        </tbody>
+    <tfoot>
+        <tr>
+            <th>Ürün Id</th>
+            <th>Ürün Adı</th>
+            <th>Ürün Durumu</th>
+            <th>Alış Fiyatı</th>
+            <th>Satış Fiyatı</th>
+            <th>Tarih</th>
+            <th>Kategori-Marka</th>
+            <th>Dükkan</th>
+        </tr>
+    </tfoot>
+</table>

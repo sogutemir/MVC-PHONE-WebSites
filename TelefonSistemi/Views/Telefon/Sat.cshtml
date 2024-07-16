@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Telefon Sat";
+    
+}
+@using PhoneProg.Data.Models
+@model Telefonlar
+
+<h2>Telefon Sat</h2>
+
+<form class="form-horizontal">
+    
+    <div class="form-group">
+        <label class="col-md-12">Telefon Adı</label>
+        <div class="col-md-12">
+            <input id="telefonAdi" value="@Model.AdSoyad" type="text" class="form-control" placeholder="Telefon Adı Giriniz">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-12">Telefon Alış Fiyatı</label>
+        <div class="col-md-12">
+            <input id="telefonAlıs" value="@Model.TelefonAlısFiyati" type="text" class="form-control" placeholder="Telefon Alış Giriniz">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-12">Telefon Satış Fiyatı</label>
+        <div class="col-md-12">
+            <input id="telefonSatısFiyatı" type="text" class="form-control" placeholder="Fiyat Giriniz">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-12">
+            <input type="button" id="telefonSat" data-id="@Model.Id" class="btn btn-block btn-danger" value="Sat">
+        </div>
+    </div>
+
+</form>

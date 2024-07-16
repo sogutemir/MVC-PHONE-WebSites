@@ -1,0 +1,139 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Istatistikler</h2>
+
+@section Css{}
+    <div class="row">
+        <div class="col-lg-3 col-sm-3 col-xs-12">
+            <div class="white-box analytics-info">
+                <h3 class="box-title">Kategori Sayısı</h3>
+                <ul class="list-inline two-part">
+                    <li>
+                        <div id="sparklinedash"></div>
+                    </li>
+                    <li class="text-right"><i class="ti-arrow-up text-success"></i> <span class="counter text-success">@ViewBag.KategoriSayisi</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-3 col-xs-12">
+            <div class="white-box analytics-info">
+                <h3 class="box-title">Eldeki Ürün Sayısı</h3>
+                <ul class="list-inline two-part">
+                    <li>
+                        <div id="sparklinedash2"></div>
+                    </li>
+                    <li class="text-right"><i class="ti-arrow-up text-purple"></i> <span class="counter text-purple">@ViewBag.TelefonSayisi</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-3 col-xs-12">
+            <div class="white-box analytics-info">
+                <h3 class="box-title">Satılmayan Ürün Sayısı</h3>
+                <ul class="list-inline two-part">
+                    <li>
+                        <div id="sparklinedash3"></div>
+                    </li>
+                    <li class="text-right"><i class="ti-arrow-up text-info"></i> <span class="counter text-info">@ViewBag.SatılmayanTelefonSayisi</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-3 col-xs-12">
+            <div class="white-box analytics-info">
+                <h3 class="box-title">Satılan Ürün Sayısı</h3>
+                <ul class="list-inline two-part">
+                    <li>
+                        <div id="sparklinedash4"></div>
+                    </li>
+                    <li class="text-right"><i class="ti-arrow-up text-danger"></i> <span class="text-danger">@ViewBag.SatilanTelefonSayisi</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="white-box">
+                <h3 class="box-title">Satış Tablosu</h3>
+                <table id="mainTable" class="table editable-table table-bordered table-striped m-b-0">
+                    <thead>
+                        <tr>
+                            <th>Marka</th>
+                            <th>Elde Olan</th>
+                            <th>Satılan Adet</th>
+                            <th>Harcanan Para</th>
+                            <th>Ciro</th>
+                            <th>Kar</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Aksesuar</td>
+                            <td>@ViewBag.AksesuarSayisi</td>
+                            <td>@ViewBag.satılanAksesuarSayisi</td>
+                            <td>@ViewBag.toplamAlınanAksesuarFiyatı</td>
+                            <td>@ViewBag.satılanAksesuarFiyati</td>
+                            <td>@ViewBag.AksesuarKar</td>
+                        </tr>
+                        <tr>
+                            <td>Iphone</td>
+                            <td>@ViewBag.IphoneSayisi</td>
+                            <td>@ViewBag.satılanIphoneSayisi</td>
+                            <td>@ViewBag.toplamAlınanIphoneFiyatı</td>
+                            <td>@ViewBag.satılanIphoneFiyati</td>
+                            <td>@ViewBag.IphoneKar</td>
+                        </tr>
+                        <tr>
+                            <td>Xiaomi</td>
+                            <td>@ViewBag.XiaomiSayisi</td>
+                            <td>@ViewBag.satılanXiaomiSayisi</td>
+                            <td>@ViewBag.toplamAlınanXiaomiFiyatı</td>
+                            <td>@ViewBag.satılanXiaomiFiyati</td>
+                            <td>@ViewBag.XiaomiKar</td>
+                        </tr>
+                        <tr>
+                            <td>Samsung</td>
+                            <td>@ViewBag.SamsungSayisi</td>
+                            <td>@ViewBag.satılanSamsungSayisi</td>
+                            <td>@ViewBag.toplamAlınanSamsungFiyatı</td>
+                            <td>@ViewBag.satılanSamsungFiyati</td>
+                            <td>@ViewBag.SamsungKar</td>
+                        </tr>
+                        <tr>
+                            <td>Huawei</td>
+                            <td>@ViewBag.HuaweiSayisi</td>
+                            <td>@ViewBag.satılanHuaweiSayisi</td>
+                            <td>@ViewBag.toplamAlınanHuaweiFiyatı</td>
+                            <td>@ViewBag.satılanHuaweiFiyati</td>
+                            <td>@ViewBag.HuaweiKar</td>
+                        </tr>
+
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th><strong>TOTAL</strong></th>
+                            <th></th>
+                            <th></th>
+                            <th>@ViewBag.ToplamAlıs</th>
+                            <th>@ViewBag.ToplamSatıs</th>
+                            <th>@ViewBag.ToplamKar</th>
+                        </tr>
+                    </tfoot>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    @section script{
+        <script src="~/Scripts/jquery.charts-sparkline.js"></script>
+        <script src="~/Scripts/dataTables.bootstrap.js"></script>
+        <script src="~/Scripts/mindmup-editabletable.js"></script>
+        <script src="~/Scripts/numeric-input-example.js"></script>
+
+    }

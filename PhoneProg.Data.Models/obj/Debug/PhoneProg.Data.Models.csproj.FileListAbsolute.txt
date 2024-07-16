@@ -1,0 +1,12 @@
+C:\Users\sogut\Desktop\TelefonProjesi\PhoneProg.Data.Models\bin\Debug\PhoneProg.Data.Models.dll.config
+C:\Users\sogut\Desktop\TelefonProjesi\PhoneProg.Data.Models\bin\Debug\PhoneProg.Data.Models.dll
+C:\Users\sogut\Desktop\TelefonProjesi\PhoneProg.Data.Models\bin\Debug\PhoneProg.Data.Models.pdb
+C:\Users\sogut\Desktop\TelefonProjesi\PhoneProg.Data.Models\bin\Debug\EntityFramework.dll
+C:\Users\sogut\Desktop\TelefonProjesi\PhoneProg.Data.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\sogut\Desktop\TelefonProjesi\PhoneProg.Data.Models\bin\Debug\EntityFramework.xml
+C:\Users\sogut\Desktop\TelefonProjesi\PhoneProg.Data.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\sogut\Desktop\TelefonProjesi\PhoneProg.Data.Models\obj\Debug\PhoneProg.Data.Models.csproj.AssemblyReference.cache
+C:\Users\sogut\Desktop\TelefonProjesi\PhoneProg.Data.Models\obj\Debug\PhoneProg.Data.Models.csproj.CoreCompileInputs.cache
+C:\Users\sogut\Desktop\TelefonProjesi\PhoneProg.Data.Models\obj\Debug\PhoneProg.Data.Models.csproj.CopyComplete
+C:\Users\sogut\Desktop\TelefonProjesi\PhoneProg.Data.Models\obj\Debug\PhoneProg.Data.Models.dll
+C:\Users\sogut\Desktop\TelefonProjesi\PhoneProg.Data.Models\obj\Debug\PhoneProg.Data.Models.pdb

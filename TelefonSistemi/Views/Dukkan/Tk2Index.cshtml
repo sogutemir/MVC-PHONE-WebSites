@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewBag.Title = "Tk2Index";
+}
+
+
+@using PhoneProg.Data.Models;
+@model List<Telefonlar>
+
+<h2>Tk2 Satış Sayfası</h2>
+
+<table id="example" class="display nowrap" style="width:100%">
+    <thead>
+        <tr>
+            <th>Telefon Id</th>
+            <th>Telefon Adı</th>
+            <th>Telefon Durumu</th>
+            <th>IMEI</th>
+            <th>Telefon Alış Fiyatı</th>
+            <th>Telefon No</th>
+            <th>Eklenme Tarihi</th>
+            <th>Kategori-Marka</th>
+            <th>Dükkan</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var telefon in Model.Where(t => t.Dukkanlar.Any(d => d.Ad == "Tk-2")))
+        {
+            <tr>
+                <td>@telefon.Id</td>
+                <td>@telefon.AdSoyad</td>
+                <td>@telefon.Durum</td>
+                <td>@telefon.Imeil</td>
+                <td>@telefon.TelefonAlısFiyati</td>
+                <td>@telefon.TelefonNo</td>
+                <td>@telefon.EklenmeTarihi</td>
+                <td>
+                    @foreach (var kategori in telefon.Kategoriler)
+                    {
+                        @kategori.Ad
+                    }
+                </td>
+
+                <td>
+                    @foreach (var Dukkan in telefon.Dukkanlar.Where(d => d.Ad == "Tk-2"))
+                    {
+                        @Dukkan.Ad
+                    }
+                </td>
+                <td><a href="@Url.Action("Guncellle", "Telefon", new { telefonId = telefon.Id })" class="btn btn-custom">Güncelle</a></td>
+                <td>
+                    @if (telefon.Satildi == null)
+                    {
+                        <a href="@Url.Action("Sat", "Dukkan", new { telefonId = telefon.Id })" class="sill btn btn-danger">Sat</a>
+                    }
+                    else if (telefon.Satildi == true)
+                    {
+                        <p>Telefon satıldı.</p>
+                    }
+                    else
+                    {
+                        <a href="@Url.Action("Sat", "Dukkan", new { telefonId = telefon.Id })" class="sill btn btn-danger">Sat</a>
+                    }
+                </td>
+                </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>Telefon Id</th>
+            <th>Telefon Adı</th>
+            <th>Telefon Durumu</th>
+            <th>IMEI</th>
+            <th>Telefon Alış Fiyatı</th>
+            <th>Telefon No</th>
+            <th>Eklenme Tarihi</th>
+            <th>Kategori-Marka</th>
+            <th>Dükkan</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
+        </tr>
+    </tfoot>
+</table>
+
